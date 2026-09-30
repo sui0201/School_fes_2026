@@ -1,0 +1,734 @@
+/* ==================================================
+   CSS LAB
+   ================================================== */
+
+:root {
+  font-family:
+    Inter,
+    "Noto Sans JP",
+    sans-serif;
+
+  color: #18181b;
+  background: #f4f4f5;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+
+/* ==================================================
+   CSS LAB - Main Layout
+   ================================================== */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #f4f4f5;
+}
+
+
+/* Header */
+
+.header {
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e4e4e7;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.logo-mark {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #18181b;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.reset-button {
+  padding: 8px 14px;
+
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #52525b;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.reset-button:hover {
+  background: #f4f4f5;
+  color: #18181b;
+}
+
+
+/* Workspace */
+
+.workspace {
+  display: grid;
+
+  grid-template-columns: 55% 45%;
+
+  min-height: calc(100vh - 64px);
+}
+
+
+/* ==================================================
+   Preview Panel
+   ================================================== */
+
+.preview-panel {
+  position: relative;
+
+  min-width: 0;
+
+  padding: 32px;
+
+  background: #f4f4f5;
+}
+
+.panel-label {
+  color: #71717a;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.preview-area {
+  width: 100%;
+  height: calc(100% - 28px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+}
+
+
+/* ==================================================
+   Editor Panel
+   ================================================== */
+
+.editor-panel {
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border-left: 1px solid #e4e4e7;
+}
+
+.editor-header {
+  padding: 28px 28px 18px;
+}
+
+.editor-description {
+  margin: 7px 0 0;
+
+  color: #71717a;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* CSS Editor */
+
+.editor {
+  flex: 1;
+
+  min-height: 280px;
+  width: 100%;
+
+  padding: 24px 28px;
+
+  resize: none;
+
+  border: none;
+  outline: none;
+
+  background: #18181b;
+  color: #f4f4f5;
+
+  font-family:
+    "Cascadia Code",
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  tab-size: 2;
+}
+
+.editor::selection {
+  background: #3f3f46;
+}
+
+
+/* ==================================================
+   Guide
+   ================================================== */
+
+.guide {
+  flex-shrink: 0;
+
+  padding: 20px 28px 24px;
+
+  background: #ffffff;
+}
+
+.guide-title {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.guide-icon {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f4f4f5;
+  color: #52525b;
+
+  font-size: 11px;
+}
+
+.guide-description {
+  margin: 8px 0 16px;
+
+  color: #71717a;
+
+  font-size: 12px;
+}
+
+.guide-items {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 8px;
+}
+
+.guide-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 9px 12px;
+
+  border-radius: 8px;
+
+  background: #f4f4f5;
+}
+
+.guide-item code {
+  color: #18181b;
+
+  font-family:
+    "Cascadia Code",
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+  font-size: 11px;
+}
+
+.guide-item span {
+  color: #71717a;
+
+  font-size: 10px;
+}
+
+.guide-tip {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 14px;
+
+  color: #71717a;
+
+  font-size: 11px;
+}
+
+.guide-tip span {
+  color: #18181b;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* ==================================================
+   Festival Preview
+   ================================================== */
+
+.festival-site {
+  width: 100%;
+  max-width: 900px;
+
+  background: #ffffff;
+  color: #18181b;
+
+  overflow: auto;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Header */
+
+.festival-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 28px;
+
+  border-bottom: 1px solid #e4e4e7;
+}
+
+.festival-logo {
+  display: flex;
+  align-items: baseline;
+
+  gap: 8px;
+}
+
+.festival-logo-main {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.festival-logo-year {
+  color: #71717a;
+
+  font-size: 12px;
+}
+
+.festival-nav {
+  display: flex;
+
+  gap: 20px;
+}
+
+.festival-nav a {
+  color: #52525b;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* Hero */
+
+.festival-hero {
+  padding: 80px 32px;
+
+  text-align: center;
+}
+
+.festival-eyebrow {
+  margin: 0 0 16px;
+
+  color: #71717a;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.festival-title {
+  margin: 0;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -0.06em;
+}
+
+.festival-subtitle {
+  margin: 20px 0 28px;
+
+  color: #71717a;
+
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.festival-button {
+  display: inline-block;
+
+  padding: 11px 20px;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* Sections */
+
+.festival-events {
+  padding: 48px 32px;
+
+  border-top: 1px solid #e4e4e7;
+}
+
+.section-heading {
+  margin-bottom: 36px;
+}
+
+.section-label {
+  margin: 0 0 8px;
+
+  color: #a1a1aa;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.section-heading h2,
+.festival-ticket h2,
+.festival-access h2 {
+  margin: 0;
+
+  font-size: 24px;
+
+  letter-spacing: -0.03em;
+}
+
+.section-heading > p:last-child {
+  margin: 10px 0 0;
+
+  color: #71717a;
+
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+
+/* Venue */
+
+.venue {
+  margin-top: 40px;
+}
+
+.venue-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+.venue-number {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #a1a1aa;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.venue-heading h3 {
+  margin: 0;
+
+  font-size: 17px;
+}
+
+.venue-count {
+  color: #a1a1aa;
+
+  font-size: 8px;
+  font-weight: 600;
+}
+
+
+/* Event Cards */
+
+.event-grid {
+  display: grid;
+
+  gap: 12px;
+}
+
+.event-card {
+  min-width: 0;
+
+  padding: 18px;
+
+  border: 1px solid #e4e4e7;
+}
+
+.event-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.event-category {
+  color: #a1a1aa;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.ticket-badge {
+  padding: 3px 6px;
+
+  border-radius: 4px;
+
+  background: #f4f4f5;
+  color: #52525b;
+
+  font-size: 8px;
+}
+
+.event-card h4 {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.event-card p {
+  min-height: 36px;
+
+  margin: 8px 0 18px;
+
+  color: #71717a;
+
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.event-location {
+  padding-top: 10px;
+
+  border-top: 1px solid #f4f4f5;
+
+  color: #a1a1aa;
+
+  font-size: 9px;
+}
+
+
+/* Ticket */
+
+.festival-ticket {
+  padding: 48px 32px;
+
+  background: #f4f4f5;
+}
+
+.festival-ticket > p:not(.section-label) {
+  max-width: 500px;
+
+  margin: 12px 0 20px;
+
+  color: #71717a;
+
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.ticket-items {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.ticket-items span {
+  padding: 8px 10px;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  color: #52525b;
+
+  font-size: 9px;
+}
+
+
+/* Access */
+
+.festival-access {
+  padding: 48px 32px;
+}
+
+.access-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 8px;
+
+  margin-top: 20px;
+}
+
+.access-item {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px;
+
+  border: 1px solid #e4e4e7;
+}
+
+.access-item span {
+  color: #a1a1aa;
+
+  font-size: 9px;
+}
+
+.access-item strong {
+  font-size: 11px;
+}
+
+
+/* Footer */
+
+.festival-footer {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 20px 32px;
+
+  border-top: 1px solid #e4e4e7;
+
+  color: #a1a1aa;
+
+  font-size: 9px;
+}
+
+
+/* ==================================================
+   Responsive
+   ================================================== */
+
+@media (max-width: 900px) {
+  .workspace {
+    grid-template-columns: 1fr;
+
+    overflow-y: auto;
+  }
+
+  .preview-panel {
+    min-height: 500px;
+  }
+
+  .editor-panel {
+    min-height: 700px;
+  }
+
+  body {
+    overflow: auto;
+  }
+}
