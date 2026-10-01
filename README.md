@@ -21,7 +21,7 @@ CSSの変更はリアルタイムでプレビューに反映されます。
 
 ```bash
 git clone <repository-url>
-cd <project-directory>
+cd School_fes_2026
 ```
 
 ### 2. パッケージをインストール
